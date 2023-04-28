@@ -222,7 +222,7 @@ class _ChatPageState extends State<ChatPage> {
 
     _addMessage(textMessage);
     var res = await http.post(Uri.parse("http://127.0.0.1:5000/chat"),
-        body: {'message': message.text});
+        body: {'message': message.text, 'model': 'gpt-4'});
 
     if (res.body != "") {
       final textMessage2 = types.TextMessage(
